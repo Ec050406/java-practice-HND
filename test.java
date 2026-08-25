@@ -45,5 +45,13 @@ import java.util.Scanner;
         }
     // print the number of wrong guesses
      System.out.println("You made " + guesses + " wrong guesses.");
+     // give feedback based on the number of wrong guesses
+     if(guesses > 9) {
+        System.out.println("bad luck");
+     } else if(guesses > 5) {
+        System.out.println("not bad");
+     } else {
+        System.out.println("good job");
+     }
 } 
 
