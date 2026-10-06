@@ -24,6 +24,49 @@ public class Card {
 
     @Override
     public String toString() {
-        return rank + " of " + suit;
+
+        String r = getShortRank();
+        String s = getSuitSymbol();
+
+        return
+            "+---------+\n" +
+            String.format("| %-2s      |\n", r) +
+            "|         |\n" +
+            "|    " + s + "    |\n" +
+            "|         |\n" +
+            String.format("|      %-2s |\n", r) +
+            "+---------+";
+    }
+
+    private String getShortRank() {
+
+        switch (rank) {
+            case "Jack":
+                return "J";
+            case "Queen":
+                return "Q";
+            case "King":
+                return "K";
+            case "Ace":
+                return "A";
+            default:
+                return rank;
+        }
+    }
+
+    private String getSuitSymbol() {
+
+        switch (suit) {
+            case "Hearts":
+                return "H";
+            case "Diamonds":
+                return "D";
+            case "Clubs":
+                return "C";
+            case "Spades":
+                return "S";
+            default:
+                return "?";
+        }
     }
 }
