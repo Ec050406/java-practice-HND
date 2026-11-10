@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class VsCodeSmoothSphere {
+public class sphere {
     public static void main(String[] args) throws InterruptedException, IOException {
         int width = 50;
         int height = 23; // Slightly shorter to fit standard VS Code panels
@@ -82,11 +82,11 @@ public class VsCodeSmoothSphere {
             System.out.print(frame.toString());
             System.out.flush();
 
-            rX += 0.05;
-            rY += 0.03;
+            rX += 0.05*2;
+            rY += 0.03*2;
 
-            // 40ms (~25 FPS) matches the render latency of VS Code's text terminal perfectly
-            Thread.sleep(40);
+            // 20ms (~50 FPS) matches the render latency of VS Code's text terminal perfectly
+            Thread.sleep(70);
         }
     }
 }

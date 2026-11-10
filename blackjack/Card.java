@@ -22,6 +22,27 @@ public class Card {
         return points;
     }
 
+    public String getSuitSymbol() {
+
+        switch (suit.toLowerCase()) {
+
+            case "hearts":
+                return "\u2665";
+
+            case "diamonds":
+                return "\u2666";
+
+            case "clubs":
+                return "\u2663";
+
+            case "spades":
+                return "\u2660";
+
+            default:
+                return "?";
+        }
+    }
+
     @Override
     public String toString() {
 
@@ -41,32 +62,22 @@ public class Card {
     private String getShortRank() {
 
         switch (rank) {
+
             case "Jack":
                 return "J";
+
             case "Queen":
                 return "Q";
+
             case "King":
                 return "K";
+
             case "Ace":
                 return "A";
+
             default:
                 return rank;
         }
     }
-
-    private String getSuitSymbol() {
-
-        switch (suit) {
-            case "Hearts":
-                return "H";
-            case "Diamonds":
-                return "D";
-            case "Clubs":
-                return "C";
-            case "Spades":
-                return "S";
-            default:
-                return "?";
-        }
-    }
 }
+

@@ -93,9 +93,15 @@ public class Hand {
 
         // Top rank
         for (Card card : cards) {
+
             String rank = getShortRank(card.getRank());
-            System.out.printf("| %-2s      |  ", rank);
+
+            System.out.printf(
+                    "| %-2s      |  ",
+                    rank
+            );
         }
+
         System.out.println();
 
         // Blank
@@ -106,9 +112,14 @@ public class Hand {
 
         // Suit
         for (Card card : cards) {
-            String suit = getSuitSymbol(card.getSuit());
-            System.out.print("|    " + suit + "    |  ");
+
+            String suit = card.getSuitSymbol();
+
+            System.out.print(
+                    "|    " + suit + "    |  "
+            );
         }
+
         System.out.println();
 
         // Blank
@@ -119,9 +130,15 @@ public class Hand {
 
         // Bottom rank
         for (Card card : cards) {
+
             String rank = getShortRank(card.getRank());
-            System.out.printf("|      %-2s |  ", rank);
+
+            System.out.printf(
+                    "|      %-2s |  ",
+                    rank
+            );
         }
+
         System.out.println();
 
         // Bottom of cards
@@ -147,12 +164,17 @@ public class Hand {
         System.out.println();
 
         // Top row
-        System.out.print(String.format("| %-2s      |  ",
-                getShortRank(cards.get(0).getRank())));
+        System.out.print(
+                String.format(
+                        "| %-2s      |  ",
+                        getShortRank(cards.get(0).getRank())
+                )
+        );
 
         for (int i = 1; i < cards.size(); i++) {
             System.out.print("|#########|  ");
         }
+
         System.out.println();
 
         // Blank
@@ -161,16 +183,20 @@ public class Hand {
         for (int i = 1; i < cards.size(); i++) {
             System.out.print("|#########|  ");
         }
+
         System.out.println();
 
         // Suit
-        System.out.print("|    " +
-                getSuitSymbol(cards.get(0).getSuit()) +
-                "    |  ");
+        System.out.print(
+                "|    " +
+                cards.get(0).getSuitSymbol() +
+                "    |  "
+        );
 
         for (int i = 1; i < cards.size(); i++) {
             System.out.print("|#########|  ");
         }
+
         System.out.println();
 
         // Blank
@@ -179,58 +205,55 @@ public class Hand {
         for (int i = 1; i < cards.size(); i++) {
             System.out.print("|#########|  ");
         }
+
         System.out.println();
 
         // Bottom
-        System.out.print(String.format("|      %-2s |  ",
-                getShortRank(cards.get(0).getRank())));
+        System.out.print(
+                String.format(
+                        "|      %-2s |  ",
+                        getShortRank(cards.get(0).getRank())
+                )
+        );
 
         for (int i = 1; i < cards.size(); i++) {
             System.out.print("|#########|  ");
         }
+
         System.out.println();
 
         // Bottom border
         for (int i = 0; i < cards.size(); i++) {
             System.out.print("+---------+  ");
         }
+
         System.out.println();
     }
 
     private String getShortRank(String rank) {
 
         switch (rank) {
+
             case "Ace":
                 return "A";
+
             case "Jack":
                 return "J";
+
             case "Queen":
                 return "Q";
+
             case "King":
                 return "K";
+
             default:
                 return rank;
         }
     }
 
-    private String getSuitSymbol(String suit) {
-
-        switch (suit) {
-            case "Hearts":
-                return "H";
-            case "Diamonds":
-                return "D";
-            case "Clubs":
-                return "C";
-            case "Spades":
-                return "S";
-            default:
-                return "?";
-        }
-    }
-
     @Override
     public String toString() {
+
         String result = "";
 
         for (Card card : cards) {

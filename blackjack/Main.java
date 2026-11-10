@@ -30,9 +30,9 @@ public class Main {
             dealer.addCard(deck.draw());
 
             System.out.println();
-            System.out.println("==============================");
+            System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
             System.out.println("          BLACKJACK");
-            System.out.println("==============================");
+            System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
 
             // ==========================================
             // PLAYER'S INITIAL HAND
@@ -62,21 +62,42 @@ public class Main {
             // ==========================================
             // CHECK INITIAL BLACKJACKS
             // ==========================================
+// ==========================================
+// CHECK INITIAL BLACKJACKS
+// ==========================================
 
-            if (player.isBlackjack()) {
+if (player.isBlackjack() || dealer.isBlackjack()) {
 
-                System.out.println();
-                System.out.println("BLACKJACK!");
+    System.out.println();
 
-                if (dealer.isBlackjack()) {
-                    System.out.println("Dealer also has Blackjack.");
-                    System.out.println("It's a draw!");
-                } else {
-                    System.out.println("You win!");
-                    playerWins++;
-                }
+    if (player.isBlackjack() && dealer.isBlackjack()) {
 
-            } else {
+        System.out.println("Both you and the dealer have Blackjack.");
+        System.out.println("It's a draw!");
+
+    } else if (player.isBlackjack()) {
+
+        System.out.println("BLACKJACK!");
+        System.out.println("You win!");
+
+        playerWins++;
+
+    } else {
+
+        System.out.println("Dealer has Blackjack.");
+        System.out.println("Dealer wins!");
+
+        dealerWins++;
+    }
+
+} else {
+
+    // ==========================================
+    // PLAYER TURN
+    // ==========================================
+
+
+           
 
                 // ==========================================
                 // PLAYER TURN
@@ -179,9 +200,9 @@ public class Main {
                 if (!player.isBust()) {
 
                     System.out.println();
-                    System.out.println("==============================");
+                    System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
                     System.out.println("        DEALER'S TURN");
-                    System.out.println("==============================");
+                    System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
 
                     // Reveal the hole card
 
@@ -234,9 +255,9 @@ public class Main {
                 // ==========================================
 
                 System.out.println();
-                System.out.println("==============================");
+                System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
                 System.out.println("         FINAL HANDS");
-                System.out.println("==============================");
+                System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,. ");
 
                 System.out.println();
                 System.out.println("Your cards:");
@@ -322,9 +343,9 @@ public class Main {
             // ==========================================
 
             System.out.println();
-            System.out.println("==============================");
+            System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
             System.out.println("         SCOREBOARD");
-            System.out.println("==============================");
+            System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
 
             System.out.println("Player wins: " + playerWins);
             System.out.println("Dealer wins: " + dealerWins);
@@ -349,9 +370,9 @@ public class Main {
         // ==========================================
 
         System.out.println();
-        System.out.println("==============================");
-        System.out.println("        FINAL SCORE");
-        System.out.println("==============================");
+        System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
+        System.out.println("         FINAL SCORE");
+        System.out.println(".,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.");
 
         System.out.println("Player wins: " + playerWins);
         System.out.println("Dealer wins: " + dealerWins);
